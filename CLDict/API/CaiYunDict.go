@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"sync"
 )
 
 type DictRequest struct {
@@ -48,7 +49,7 @@ type CaiyunDict struct {
 	} `json:"dictionary"`
 }
 
-func CaiyunQuery(word string) {
+func CaiyunQuery(word string, waitGroup *sync.WaitGroup) {
 	client := &http.Client{}
 	request := DictRequest{TransType: "en2zh", Source: word}
 	buf, err := json.Marshal(request)
@@ -100,4 +101,5 @@ func CaiyunQuery(word string) {
 	for _, item := range dictResponse.Dictionary.Explanations {
 		fmt.Println("\t" + item)
 	}
+	defer waitGroup.Done()
 }

@@ -17,13 +17,7 @@ example: simpleDict hello`)
 	//use system wait group to process 2 translation api together
 	waitGroup := sync.WaitGroup{}
 	waitGroup.Add(2)
-	go func() {
-		defer waitGroup.Done()
-		API.CaiyunQuery(word)
-	}()
-	go func() {
-		defer waitGroup.Done()
-		API.Query360(word)
-	}()
+	API.CaiyunQuery(word, &waitGroup)
+	API.Query360(word, &waitGroup)
 	waitGroup.Wait()
 }

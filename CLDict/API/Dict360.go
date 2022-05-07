@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"sync"
 )
 
 type Dict360 struct {
@@ -47,7 +48,7 @@ type Dict360 struct {
 	Msg   string `json:"msg"`
 }
 
-func Query360(word string) {
+func Query360(word string, waitGroup *sync.WaitGroup) {
 	client := &http.Client{}
 	url := "https://fanyi.so.com/index/search?eng=1&validate=&ignore_trans=0&query=" + word + "%0A"
 	req, err := http.NewRequest("POST", url, nil)
@@ -91,4 +92,5 @@ func Query360(word string) {
 	for _, meaning := range dictResponse.Data.Explain.Translation {
 		fmt.Println("\t" + meaning)
 	}
+	defer waitGroup.Done()
 }
