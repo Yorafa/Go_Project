@@ -8,7 +8,8 @@ This repo will collect some projects of go.
    - a command line program random a number from 0 to 100 (exclusive) and ask user to guess
 2. Command Line Dictionary
    - use caiyun translator's api to translate the command line argument
-3. 
+3. SimpleSocketProxy
+   - use sock5 to do proxy
 
 ## How to do 2nd project dictionary?
 
