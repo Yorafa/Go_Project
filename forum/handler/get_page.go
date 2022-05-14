@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"Go_Project/Forum/service"
+	"Go_Project/forum/service"
 	"strconv"
 )
 

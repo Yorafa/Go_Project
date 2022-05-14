@@ -1,8 +1,8 @@
 package main
 
 import (
-	"Go_Project/Forum/entity"
-	"Go_Project/Forum/handler"
+	"Go_Project/forum/entity"
+	"Go_Project/forum/handler"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"os"

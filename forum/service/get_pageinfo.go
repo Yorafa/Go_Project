@@ -1,7 +1,7 @@
 package service
 
 import (
-	"Go_Project/Forum/entity"
+	"Go_Project/forum/entity"
 	"errors"
 	"fmt"
 )

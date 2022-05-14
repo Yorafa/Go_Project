@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Go_Project/CLDict/API"
+	"Go_Project/commandDict/api"
 	"fmt"
 	"os"
 	"sync"
@@ -17,7 +17,7 @@ example: simpleDict hello`)
 	//use system wait group to process 2 translation api together
 	waitGroup := sync.WaitGroup{}
 	waitGroup.Add(2)
-	API.CaiyunQuery(word, &waitGroup)
-	API.Query360(word, &waitGroup)
+	api.CaiyunQuery(word, &waitGroup)
+	api.Query360(word, &waitGroup)
 	waitGroup.Wait()
 }
