@@ -10,6 +10,9 @@ This repo will collect some projects of go.
    - use caiyun translator's api to translate the command line argument
 3. SimpleSocketProxy
    - use sock5 to do proxy
+4. Simple Forum Back End
+   - use GIN module to build a local base forum (use json)
+   - use unit test, mock test to test program 
 
 ## How to do 2nd project dictionary?
 
@@ -19,3 +22,6 @@ This repo will collect some projects of go.
 4. use above step to set up request struct
 5. use http module to send request, and get the response
 6. use [json2go](https://oktools.net/json2go) convert the response to struct so that we can access easily
+
+
+[//]: # (TODO: add error checking all convertation )
